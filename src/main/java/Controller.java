@@ -1,3 +1,5 @@
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -57,31 +59,46 @@ public class Controller implements Initializable {
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
                 t.getTablePosition().getRow()).setName(t.getNewValue())
         );
-        iVForJava4.setCellValueFactory(new PropertyValueFactory<JavaEETechnology, String>("versionForJava4"));
+        iVForJava4.setCellValueFactory((
+                Callback<TableColumn.CellDataFeatures<JavaEETechnology, String>, ObservableValue<String>>) data ->
+                new ReadOnlyStringWrapper(data.getValue().getVersions().getVersionForJava4())
+        );
         iVForJava4.setCellFactory(cellFactory);
         iVForJava4.setOnEditCommit(
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
                         t.getTablePosition().getRow()).getVersions().setVersionForJava4(t.getNewValue())
         );
-        iVForJava5.setCellValueFactory(new PropertyValueFactory<JavaEETechnology, String>("versionForJava5"));
+        iVForJava5.setCellValueFactory((
+                Callback<TableColumn.CellDataFeatures<JavaEETechnology, String>, ObservableValue<String>>) data ->
+                new ReadOnlyStringWrapper(data.getValue().getVersions().getVersionForJava5())
+        );
         iVForJava5.setCellFactory(cellFactory);
         iVForJava5.setOnEditCommit(
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
                         t.getTablePosition().getRow()).getVersions().setVersionForJava5(t.getNewValue())
         );
-        iVForJava6.setCellValueFactory(new PropertyValueFactory<JavaEETechnology, String>("versionForJava6"));
+        iVForJava6.setCellValueFactory((
+                Callback<TableColumn.CellDataFeatures<JavaEETechnology, String>, ObservableValue<String>>) data ->
+                new ReadOnlyStringWrapper(data.getValue().getVersions().getVersionForJava6())
+        );
         iVForJava6.setCellFactory(cellFactory);
         iVForJava6.setOnEditCommit(
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
                         t.getTablePosition().getRow()).getVersions().setVersionForJava6(t.getNewValue())
         );
-        iVForJava7.setCellValueFactory(new PropertyValueFactory<JavaEETechnology, String>("versionForJava7"));
+        iVForJava7.setCellValueFactory((
+                Callback<TableColumn.CellDataFeatures<JavaEETechnology, String>, ObservableValue<String>>) data ->
+                new ReadOnlyStringWrapper(data.getValue().getVersions().getVersionForJava7())
+        );
         iVForJava7.setCellFactory(cellFactory);
         iVForJava7.setOnEditCommit(
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
                         t.getTablePosition().getRow()).getVersions().setVersionForJava7(t.getNewValue())
         );
-        iVForJava8.setCellValueFactory(new PropertyValueFactory<JavaEETechnology, String>("versionForJava8"));
+        iVForJava8.setCellValueFactory((
+                Callback<TableColumn.CellDataFeatures<JavaEETechnology, String>, ObservableValue<String>>) data ->
+                new ReadOnlyStringWrapper(data.getValue().getVersions().getVersionForJava8())
+        );
         iVForJava8.setCellFactory(cellFactory);
         iVForJava8.setOnEditCommit(
                 (EventHandler<CellEditEvent<JavaEETechnology, String>>) t -> t.getTableView().getItems().get(
